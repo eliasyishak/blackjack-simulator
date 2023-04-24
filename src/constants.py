@@ -1,3 +1,6 @@
+from card import Card
+
+
 # The face values of the cards
 face_values: list[str] = [
     "A",
@@ -19,7 +22,7 @@ face_values: list[str] = [
 suits: list[str] = ["Clubs", "Spades", "Diamonds", "Hearts"]
 
 # Combine the above 2 lists to get a deck of 52 cards
-unit_deck: list[str] = []
+unit_deck: list[Card] = []
 for suit in suits:
     for val in face_values:
-        unit_deck.append(f"{val}-{suit}")
+        unit_deck.append(Card(rank=val, suit=suit))

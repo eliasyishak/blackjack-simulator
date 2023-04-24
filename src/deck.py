@@ -1,6 +1,8 @@
-from random import randint, shuffle
+from random import randint
+from random import shuffle
 from typing import Literal
 
+from card import Card
 from constants import unit_deck
 
 
@@ -28,7 +30,7 @@ class Deck:
         # Reset the deck
         self.reset_deck()
 
-    def deal_card(self) -> str:
+    def deal_card(self) -> Card:
         """
         Deals from the current deck by removing the last item
         in the deck and returning it
@@ -59,7 +61,7 @@ class Deck:
         """
 
         # Define an attribute that contains all the cards
-        self._current_deck: list[str] = self.num_decks * unit_deck
+        self._current_deck: list[Card] = self.num_decks * unit_deck
         print(f"Reset deck with {len(self._current_deck)} cards...")
 
         # Shuffle the deck a few times
@@ -76,7 +78,7 @@ if __name__ == "__main__":
     )
 
     i = 0
-    found: dict[str, int] = {}
+    found: dict[Card, int] = {}
     while True:
         card = deck.deal_card()
         if card not in found:

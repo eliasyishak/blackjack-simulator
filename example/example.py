@@ -1,5 +1,4 @@
 import random
-from typing import List
 
 
 class Card:
@@ -15,7 +14,7 @@ class Deck:
     def __init__(self):
         ranks = [str(i) for i in range(2, 11)] + ["Jack", "Queen", "King", "Ace"]
         suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
-        self.cards: List[Card] = [Card(rank, suit) for suit in suits for rank in ranks]
+        self.cards: list[Card] = [Card(rank, suit) for suit in suits for rank in ranks]
         print(self.cards)
         random.shuffle(self.cards)
 
@@ -25,7 +24,7 @@ class Deck:
 
 class Hand:
     def __init__(self):
-        self.cards: List[Card] = []
+        self.cards: list[Card] = []
 
     def add_card(self, card: Card):
         self.cards.append(card)
