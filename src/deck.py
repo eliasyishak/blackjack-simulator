@@ -62,12 +62,12 @@ class Deck:
 
         # Define an attribute that contains all the cards
         self._current_deck: list[Card] = self.num_decks * unit_deck
-        print(f"Reset deck with {len(self._current_deck)} cards...")
+        # print(f"Reset deck with {len(self._current_deck)} cards...")
 
         # Shuffle the deck a few times
         for _ in range(self.num_shuffles):
             shuffle(self._current_deck)
-        print(f"Finished shuffling the deck {self.num_shuffles} times...")
+        # print(f"Finished shuffling the deck {self.num_shuffles} times...")
 
 
 if __name__ == "__main__":
