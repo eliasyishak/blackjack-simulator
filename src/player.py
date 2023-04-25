@@ -12,8 +12,10 @@ class Player:
 
         # We will collect both of the winning hand and the
         # dealers hand when the player won
+        self.winning_value: list[int] = []
         self.winning_hands: list[list[Card]] = []
         self.dealers_hands: list[list[Card]] = []
+        self.dealers_value: list[int] = []
 
     def get_value(self) -> int:
         return self.hand.get_value()
@@ -24,13 +26,15 @@ class Player:
     def reset_hand(self):
         self.hand.cards_in_hand.clear()
 
-    def won(self, dealers_hand: list[Card]):
+    def won(self, dealers_hand: list[Card], dealers_value: int):
         self.wins += 1
+        self.winning_value.append(self.get_value())
         self.winning_hands.append(list(self.hand.cards_in_hand))
         self.dealers_hands.append(list(dealers_hand))
+        self.dealers_value.append(dealers_value)
 
     def __repr__(self) -> str:
-        return f"{self.name} (max={self.max_value}) --> {self.get_value()} (wins={self.wins})"
+        return f"{self.name} (max={self.max_value}) (wins={self.wins})"
 
     def __str__(self) -> str:
-        return f"{self.name} (max={self.max_value}) --> {self.get_value()} (wins={self.wins})"
+        return f"{self.name} (max={self.max_value}) (wins={self.wins})"
