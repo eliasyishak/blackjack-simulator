@@ -17,3 +17,6 @@ Run the simulation with the following command for python3
 <!-- Run from the root folder -->
 python3 src/main.py
 ```
+
+An example python script can be found in `example/example.py` that serves
+as an interactive approach to the simulation, good luck :)
